@@ -1,0 +1,37 @@
+<div layout="vertical" layout-fill>
+
+  <header ng-include="'components/navbar/navbar.html'"></header>
+
+  <md-content>
+    <section class="jumbotron">
+      <h1>SK planet's Hubpolio!</h1>
+    </section>
+
+    <div class="techs" layout-align="center">
+      <md-card ng-repeat="portfolio in portfolios | orderBy:'rank'">
+        <div class="thumbnail">
+          <img class="pull-right" ng-src="assets/images/{{portfolio.logo}}" alt="{{portfolio.title}}">
+          <div class="caption">
+            <h3>
+              <img class="repo-logo" ng-src="assets/images/{{portfolio.provider}}.png" alt="{{portfolio.title}}">
+              <a ng-href="{{portfolio.repo_url}}">{{portfolio.title}}</a>
+            </h3>
+            <p class="update">{{ portfolio.updated_at }}</p>
+            <p class="desc">{{portfolio.description}}</p>
+            <p><a ng-href="{{portfolio.url}}">{{portfolio.url}}</a></p>
+          </div>
+          <div>
+            <img ng-src="assets/images/{{portfolio.thumb}}" alt="{{portfolio.title}}">
+          </div>
+        </div>
+      </md-card>
+    </div>
+  </md-content>
+
+  <footer>
+    <md-toolbar layout="row" layout-align="center center">
+      <p>powered by <a class="hublink" href="https://github.com/miconblog/hubfolio">hubpolio</a> &copy; copyleft 2015 </p>
+    </md-toolbar>
+  </footer>
+
+</div>

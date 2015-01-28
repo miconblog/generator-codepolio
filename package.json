@@ -1,0 +1,28 @@
+{
+  "name": "hubfolio",
+  "version": "1.0.0",
+  "description": "make your portfolio site with your repositories",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://miconblog@github.com/miconblog/hubfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miconblog/hubfolio/issues"
+  },
+  "homepage": "https://github.com/miconblog/hubfolio",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "gulp": "^3.8.10"
+  },
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "q": "^1.1.2",
+    "request": "^2.51.0"
+  }
+}
