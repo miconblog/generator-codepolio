@@ -19,8 +19,8 @@
 var Q = require('q');
 var _ = require('lodash');
 var soap = require('soap');
-
-
+var exec = require('child_process').exec;
+var Checkout = require("nodegit").Checkout;
 
 function getClient(name,url,endPointUrl, result) {
 
@@ -83,19 +83,84 @@ function getScm(info) {
 function getRepository(info) {
     var deferred = Q.defer();
 
-    info.scm.getRepositoryList({'sessionId': info.sessionId,'projectId':info.projectList[0].id.$value},function(err,repositoryInfo) {
+    // TODO : for each문으로 변경 해야 함.
+    var repositoryIds = [];
+    info.scm.getRepositoryList({'sessionId': info.sessionId,'projectId':info.projectList[3].id.$value},function(err,repositoryInfo) {
 
         if( err ) {
             return deferred.reject(new Error(err));
         }
 
-        console.log(repositoryInfo.getRepositoryListReturn.dataRows.dataRows);
+        _.forEach(repositoryInfo.getRepositoryListReturn.dataRows.dataRows,function(value,id) {
+            repositoryIds.push(repositoryInfo.getRepositoryListReturn.dataRows.dataRows[id].id.$value);
+        });
+
+        info['repositoryIds'] = repositoryIds;
+
         deferred.resolve(info);
     });
 
 
 
     return deferred.promise;
+}
+
+
+function getScmInfos(info) {
+
+    var deferred = Q.defer();
+
+    var scmInfos =[];
+    _.forEach(info.repositoryIds,function(value,id){
+        info.scm.getSCMCheckoutCommand({'sessionId':info.sessionId,'repositoryId':value,'userName':'jaejin.yun'},function(err,result) {
+
+
+            var scmCommand =result.getSCMCheckoutCommandReturn.$value;
+
+            var scmRepo = '';
+            if(scmCommand.substr(0,3) == 'svn') {
+                scmRepo = scmCommand.substring(scmCommand.indexOf('http'));
+            } else {
+                scmRepo = scmCommand.substring(scmCommand.indexOf('git'));
+            }
+
+            scmInfos.push({'scmType':scmCommand.substr(0,3),'scmRepo':scmRepo})
+        });
+    });
+
+    info['scmInfos'] = scmInfos;
+    deferred.resolve(info);
+
+    return deferred.promise;
+
+}
+
+
+
+function getHubfolio(info) {
+    var deferred = Q.defer();
+
+
+
+    _.forEach(info.scmInfos,function(value,key){
+       if(value.scmType == 'svn') {
+
+       } else {
+
+       }
+    });
+
+    deferred.resolve(info);
+    // git clone -n ssh://jaejin.yun@skvalley.com:29418/log2 --depth 1
+    // git checkout
+    // TODO: git 으로 파일 한개만 가져오기 & svn cat으로 파일 가져오기
+
+    return deferred.promise;
+}
+
+
+function getFileFromGit(url) {
+
 }
 
 module.exports = {
@@ -113,7 +178,9 @@ module.exports = {
             .then(getLogin)
             .then(getProjectList)
             .then(getScm)
-            .then(getRepository);
+            .then(getRepository)
+            .then(getScmInfos)
+            .then(getHubfolio);
     }
 
 };

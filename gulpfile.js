@@ -20,7 +20,7 @@ gulp.task('default', function() {
     userName : 'jaejin.yun',
     password : '#A7676a#'
     }).then(function(result){
-     //console.log(result.projectList);
+    // console.log(result.projectList);
    }).catch(function(err){
        console.log(err);
    })
