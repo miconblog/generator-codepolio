@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/miconblog/hubfolio",
   "devDependencies": {
-    "grunt": "^0.4.5",
     "gulp": "^3.8.10"
   },
   "dependencies": {
