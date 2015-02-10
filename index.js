@@ -1,22 +1,21 @@
-var github = require('./core/github');
-var theme = require('./theme');
+#!/usr/bin/env node
+var Liftoff = require('liftoff');
 
+var Hacker = new Liftoff({
+  name: 'hacker'
+}).on('require', function (name, module) {
+  console.log('Loading external module:', name);
+}).on('requireFail', function (name, err) {
+  console.log('Unable to load:', name, err);
+});
 
-var hub = require('/core/account-hub');
-
-hub
-.merge([github, bitbutcket, skvalley])
-.then(function(data){
-
-})
-
-
-github
-  .load({provider:false})
-  .then(function(repos){
-    console.log(repos)
-
-    // theme
-    //   .build({data:repos});
-
-  })
+Hacker.launch(function() {
+  if(this.configPath) {
+    process.chdir(this.configBase);
+    console.log('Setting current working directory:', this.configBase);
+    // kick off here
+  } else {
+    console.log('No Hackerfile found.');
+    process.exit(1);
+  }
+});
