@@ -2,92 +2,33 @@
 
 var _ = require('lodash');
 var chalk = require('chalk');
-
 var prompts = require('../prompts.json');
-var Q = require('q');
 
+module.exports = function (Generator) {
+  /**
+   * 이렇게 코드를 분리한 것은 런루프를 돌리기 위해 
+   * 인스턴스 메소드를 분리한 것과 다름 없다.
+   * prompts.json 파일을 읽어서,.. 한번에 질문을 만들어내자!
+   */
+  Generator.prototype.prompting = function() {
 
-function inquireUsernames( repos){
+    console.log('2. prompting');
 
-  var funcs = [];
-  var self = this;
+    // this.log('__________________________');
+    // this.log('Check your ' + chalk.green('configuratoins'));
 
-  repos.forEach(function(name){
-
-    funcs.push(function(done2){
-
-      var deferred = Q.defer();
-      var prompt = _.cloneDeep(prompts[1]);
-      prompt.message =  prompt.message.replace("#REPOS#", name);
-
-      var done = self.async();
-      self.prompt(prompt, function(answers){
-
-        //TODO: 설정값 저장....
-
-        done();
-        done2();
-        deferred.resolve(self.async());
-
-      });
-      return deferred.promise
-    });
-  });
-
-
-
-  funcs.reduce(Q.when,Q(self.async()));
-}
-
-
-
-module.exports = function (HubpolioGenerator) {
-  var repos = [];
-
-  HubpolioGenerator.prototype.selectRepos = function() {
-
-    this.log('__________________________');
-    this.log('Check your ' + chalk.green('configuratoins'));
 
     var done = this.async();
-    this.prompt(prompts[0], function(answers){
-      repos = answers.repos;
+
+    this.prompt(prompts, function(answers){
+
+      //console.log(this, answers);
+      this.props = answers;
 
       done();
-      //this.log('\n__________________________');
-    }.bind(this));
 
-    
-  }
-
-
-
-  HubpolioGenerator.prototype.inputUsername = function() {
-
-
-    inquireUsernames.call(this, repos);
-
-
-  }
-
-
-
-  HubpolioGenerator.prototype.selectTheme = function() {
-
-    var done = this.async();
-    this.prompt(prompts[2], function(answers){
-      repos = answers.repos;
-
-      done();
-      //this.log('\n__________________________');
     }.bind(this));
 
 
-    // TODO: 여러개중에 하나의 테마를 고른다.
-
-
-
-
   }
-
 }

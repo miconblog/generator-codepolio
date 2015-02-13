@@ -1,3 +1,7 @@
+# generator-hubpolio [![Build Status](https://secure.travis-ci.org/miconblog/generator-hubpolio.png?branch=master)](https://travis-ci.org/miconblog/generator-hubpolio)
+
+> [Yeoman](http://yeoman.io) generator
+
 # Hubpolio Yeoman Generator
 it makes your portfolio site with your repositories. For this you need to put an metafile(hub.json) to your repository each.
 
@@ -27,17 +31,26 @@ it makes your portfolio site with your repositories. For this you need to put an
       }
     }
 
-# How to contribute
+# How to contribute theme
+
 
 
 # How to build
 
-1. checkout first
-2. npm link
-3. yo hubpolio
+To install generator-hubpolio from npm, run:
 
+```bash
+npm install -g generator-hubpolio
+```
 
-# Hub Project 생성
+Finally, initiate the generator:
+
+```bash
+yo hubpolio
+```
+
+# TODOs
+
     $> yo hubpolio
 
       - 샘플 프로젝트를 복사 
@@ -89,4 +102,50 @@ it makes your portfolio site with your repositories. For this you need to put an
 # Features
  - Github 플러그인: Github 계정에 있는 .hub 파일을 읽어온다. 
 
- - 
+# About Yeoman Generator 
+제너레이터는 자동으로 실행되는 메소드 런루프가 있는데, 아래와 같은 순서로 동작한다. 
+특정 메소드 이름은 우선순위 그룹이 있어서 우선 순위에 따라 동작하고, 
+나머지 메소드들은 모두 default 그룹에서 동작한다.
+
+'''
+    --> constructor
+    --> info
+
+         _-----_
+        |       |    .--------------------------.
+        |--(o)--|    |         Welcome!         |
+       `---------´   '--------------------------'|                          |
+        ( _´U`_ )    |   Now you can generate   |
+        /___A___\    |  your portfolio website! |
+         |  ~  |     '--------------------------'
+       __'.___.'__
+     ´   `  |° ´ Y `
+
+    1. initializing
+    2. prompting
+    3. configuring
+    --> write
+    --> writeln
+    --> ok
+    --> error
+    --> skip
+    --> force
+    --> create
+    --> invoke
+    --> conflict
+    --> identical
+    --> table
+    --> init
+    4. default
+    --> method 1 just ran
+    --> won't be called automatically
+    --> method 2 just ran
+    5. writing
+    6. conflicts
+    7. install
+    8. end
+'''
+
+## License
+
+MIT

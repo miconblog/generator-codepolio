@@ -2,7 +2,7 @@
   {
     "type": "checkbox",
     "message": "Select repositories to collect",
-    "name": "repos",
+    "name": "repositories",
     "choices": [
       {
         "name": "Github",
@@ -15,12 +15,6 @@
         "name": "Teamforge"
       }
     ]
-  },
-  {
-    "type": "input",
-    "name": "username",
-    "message": "Whats your #REPOS# username",
-    "store": false
   },
   {
     "type": "list",
