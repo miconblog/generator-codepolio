@@ -4,10 +4,45 @@ var _ = require('lodash');
 var chalk = require('chalk');
 
 var prompts = require('../prompts.json');
+var Q = require('q');
+
+
+function inquireUsernames( repos){
+
+  var funcs = [];
+  var self = this;
+
+  repos.forEach(function(name){
+
+    funcs.push(function(done2){
+
+      var deferred = Q.defer();
+      var prompt = _.cloneDeep(prompts[1]);
+      prompt.message =  prompt.message.replace("#REPOS#", name);
+
+      var done = self.async();
+      self.prompt(prompt, function(answers){
+
+        //TODO: 설정값 저장....
+
+        done();
+        done2();
+        deferred.resolve(self.async());
+
+      });
+      return deferred.promise
+    });
+  });
+
+
+
+  funcs.reduce(Q.when,Q(self.async()));
+}
+
 
 
 module.exports = function (HubpolioGenerator) {
-  var account = [];
+  var repos = [];
 
   HubpolioGenerator.prototype.selectRepos = function() {
 
@@ -16,10 +51,7 @@ module.exports = function (HubpolioGenerator) {
 
     var done = this.async();
     this.prompt(prompts[0], function(answers){
-      
-      if(answers.repos){
-        account = answers.repos;
-      }
+      repos = answers.repos;
 
       done();
       //this.log('\n__________________________');
@@ -29,21 +61,33 @@ module.exports = function (HubpolioGenerator) {
   }
 
 
-  HubpolioGenerator.prototype.inputAccount = function() {
+
+  HubpolioGenerator.prototype.inputUsername = function() {
+
+
+    inquireUsernames.call(this, repos);
+
+
+  }
+
+
+
+  HubpolioGenerator.prototype.selectTheme = function() {
 
     var done = this.async();
-    this.prompt(prompts[1], function(answers){
-      
-      if(answers.test){
-        this.log("TESTSRETE");
-        //this.config.save();
-      }
+    this.prompt(prompts[2], function(answers){
+      repos = answers.repos;
 
       done();
-      this.log('\n__________________________');
+      //this.log('\n__________________________');
     }.bind(this));
 
-    
+
+    // TODO: 여러개중에 하나의 테마를 고른다.
+
+
+
+
   }
 
 }

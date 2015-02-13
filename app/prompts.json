@@ -19,12 +19,24 @@
   {
     "type": "input",
     "name": "username",
-    "message": "Whats your Github username",
-    "store": true
+    "message": "Whats your #REPOS# username",
+    "store": false
   },
   {
-    "type": "confirm",
-    "name": "test",
-    "message": "test for test?"
+    "type": "list",
+    "name": "theme",
+    "message": "Choose your theme" ,
+    "choices": [
+      {
+        "name": "Basic",
+        "checked": true
+      },
+      {
+        "name": "Twitter"
+      },
+      {
+        "name": "Square"
+      }
+    ]
   }
 ]

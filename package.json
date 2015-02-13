@@ -27,6 +27,7 @@
     "chalk": "^0.5.1",
     "inquirer": "^0.8.0",
     "lodash": "^3.1.0",
+    "q": "^1.1.2",
     "yeoman-generator": "^0.18.8",
     "yosay": "^1.0.2"
   }
