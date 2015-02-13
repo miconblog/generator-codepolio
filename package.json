@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "Build portfolio website with your repositories",
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "hubpolio"
   ],
   "repository": {
     "type": "git",
@@ -23,6 +24,10 @@
     "gulp": "^3.8.10"
   },
   "dependencies": {
-    "yeoman-generator": "^0.18.8"
+    "chalk": "^0.5.1",
+    "inquirer": "^0.8.0",
+    "lodash": "^3.1.0",
+    "yeoman-generator": "^0.18.8",
+    "yosay": "^1.0.2"
   }
 }

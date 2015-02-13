@@ -32,6 +32,10 @@ it makes your portfolio site with your repositories. For this you need to put an
 
 # How to build
 
+1. checkout first
+2. npm link
+3. yo hubpolio
+
 
 # Hub Project 생성
     $> yo hubpolio

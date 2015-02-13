@@ -1,0 +1,30 @@
+[
+  {
+    "type": "checkbox",
+    "message": "Select repositories to collect",
+    "name": "repos",
+    "choices": [
+      {
+        "name": "Github",
+        "checked": true
+      },
+      {
+        "name": "Bitbucket"
+      },
+      {
+        "name": "Teamforge"
+      }
+    ]
+  },
+  {
+    "type": "input",
+    "name": "username",
+    "message": "Whats your Github username",
+    "store": true
+  },
+  {
+    "type": "confirm",
+    "name": "test",
+    "message": "test for test?"
+  }
+]
