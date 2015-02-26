@@ -1,3 +1,6 @@
+/**
+ * Where you prompt users for options (where you'd call this.prompt())
+ */
 'use strict';
 
 var _ = require('lodash');
@@ -11,12 +14,6 @@ module.exports = function (Generator) {
    * prompts.json 파일을 읽어서,.. 한번에 질문을 만들어내자!
    */
   Generator.prototype.prompting = function() {
-
-    console.log('2. prompting');
-
-    // this.log('__________________________');
-    // this.log('Check your ' + chalk.green('configuratoins'));
-
 
     var done = this.async();
 

@@ -24,11 +24,11 @@ var HubpolioGenerator = generators.Base.extend({
 });
 module.exports = HubpolioGenerator;
 
-require('./src/initializing')(HubpolioGenerator);
-require('./src/prompts')(HubpolioGenerator);
-require('./src/configuring')(HubpolioGenerator);
-require('./src/default')(HubpolioGenerator);
-require('./src/writing')(HubpolioGenerator);
-require('./src/conflicts')(HubpolioGenerator);
-require('./src/install')(HubpolioGenerator);
-require('./src/end')(HubpolioGenerator);
+require('./src/1initializing')(HubpolioGenerator);
+require('./src/2prompts')(HubpolioGenerator);
+require('./src/3configuring')(HubpolioGenerator);
+require('./src/4default')(HubpolioGenerator);
+require('./src/5writing')(HubpolioGenerator);
+require('./src/6conflicts')(HubpolioGenerator);
+require('./src/7install')(HubpolioGenerator);
+require('./src/8end')(HubpolioGenerator);

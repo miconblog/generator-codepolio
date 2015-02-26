@@ -22,14 +22,14 @@
     "message": "Choose your theme" ,
     "choices": [
       {
-        "name": "Basic",
+        "name": "basic",
         "checked": true
       },
       {
-        "name": "Twitter"
+        "name": "twitter"
       },
       {
-        "name": "Square"
+        "name": "square"
       }
     ]
   }
