@@ -11,12 +11,12 @@ module.exports = function (Generator) {
     
     app: function(){ 
       this.fs.copy(
-        this.templatePath(this.props.theme + '/_package.json'),
+        this.templatePath(this.props.theme + '/package.json'),
         this.destinationPath('package.json')
       );
 
       this.fs.copy(
-        this.templatePath(this.props.theme + '/_bower.json'),
+        this.templatePath(this.props.theme + '/bower.json'),
         this.destinationPath('bower.json')
       );
     },
@@ -41,7 +41,7 @@ module.exports = function (Generator) {
 
     gulp: function(){
       this.fs.copy(
-        this.templatePath(this.props.theme + '/_gulpfile.js'),
+        this.templatePath(this.props.theme + '/gulpfile.js'),
         this.destinationPath('gulpfile.js')
       );
 

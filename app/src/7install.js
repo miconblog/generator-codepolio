@@ -10,6 +10,9 @@ module.exports = function (Generator) {
   Generator.prototype.install = function() {
 
     //console.log('7. install');
+    this.installDependencies({
+      skipInstall: this.options['skip-install']
+    });
 
   }
 }

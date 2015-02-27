@@ -13,19 +13,25 @@ module.exports = function (Generator) {
    * 인스턴스 메소드를 분리한 것과 다름 없다.
    * prompts.json 파일을 읽어서,.. 한번에 질문을 만들어내자!
    */
-  Generator.prototype.prompting = function() {
+  Generator.prototype.prompting = {
 
-    var done = this.async();
+    first: function() {
+      var done = this.async();
+      this.prompt(prompts, function(answers){
 
-    this.prompt(prompts, function(answers){
+        //console.log(this, answers);
+        this.props = answers;
 
-      //console.log(this, answers);
-      this.props = answers;
+        done();
 
-      done();
+      }.bind(this));
 
-    }.bind(this));
+      console.log("first end");
+    },
 
+    second: function(){
+      console.log("testse second")
+    }
 
   }
 }

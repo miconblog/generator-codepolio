@@ -11,9 +11,5 @@ module.exports = function (Generator) {
 
   Generator.prototype.initializing = function() {
 
-    this.installDependencies({
-      skipInstall: this.options['skip-install']
-    });
-
   }
 }
