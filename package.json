@@ -5,11 +5,11 @@
   "license": "MIT",
   "main": "app/index.js",
   "repository": "miconblog/generator-hubpolio",
-  "author": {
+  "author": [{
     "name": "Byungdae Sohn",
     "email": "miconblog@gmail.com",
     "url": "http://miconblog.com/"
-  },
+  }],
   "engines": {
     "node": ">=0.10.0"
   },
