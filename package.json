@@ -34,7 +34,8 @@
     "yosay": "^1.0.2"
   },
   "devDependencies": {
-    "gulp": "^3.8.10"
+    "gulp": "^3.8.10",
+    "mocha": "^2.1.0"
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
