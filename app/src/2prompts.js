@@ -9,8 +9,7 @@ var prompts = require('../prompts.json');
 
 module.exports = function (Generator) {
   /**
-   * 이렇게 코드를 분리한 것은 런루프를 돌리기 위해 
-   * 인스턴스 메소드를 분리한 것과 다름 없다.
+   * 이렇게 코드를 분리한 것은 런루프를 돌리기 위해 인스턴스 메소드를 분리한 것과 다름 없다.
    * prompts.json 파일을 읽어서,.. 한번에 질문을 만들어내자!
    */
   Generator.prototype.prompting = {
@@ -25,8 +24,6 @@ module.exports = function (Generator) {
         done();
 
       }.bind(this));
-
-      console.log("first end");
     },
 
     second: function(){

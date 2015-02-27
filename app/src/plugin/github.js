@@ -52,7 +52,7 @@ module.exports = {
 
       repos.forEach(function(repo){
 
-        params.url = "https://raw.githubusercontent.com/" + repo.full_name + "/master/HUB.json";
+        params.url = "https://raw.githubusercontent.com/" + repo.full_name + "/master/hub.json";
 
         request.get(params,  function(err, res, body){
 

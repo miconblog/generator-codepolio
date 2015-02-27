@@ -1,25 +1,12 @@
 { 
   "title": "Hubpolio",
   "description": "make your portfolio site with your repositories",
-  "logo": "hub-logo.png",
-  "thumb": "hubpolio.png",
-  "type": "web",
-  "provider": "github",
-  "repo_url": "https://github.com/miconblog/hubfolio",
-  "updated_at": "2015-01-22T05:24:36Z",
-  "github": {
-    "html_url": "https://github.com/miconblog/hubfolio",
-  },
+  "category" : "Yeoman Generator",
+  "tags": ["javascript"],
   "theme" : {
     "basic": {
-      "imgae": "ssss",
-    },
-    "twitter": {
-      "type" : "Javascirpt"
     },
     "square": {
-      
     }
   }
-
 }

@@ -6,27 +6,15 @@
 makes your portfolio site with your repositories. For this you need to put an metafile(hub.json) to your repository each first.
 
 # This is the sample hub.json
-    { 
-      "title": "Hubpolio",
-      "description": "make your portfolio site with your repositories",
-      "category" : "Yeoman Generator"
-      "tags": ["javascript"]
-      "theme" : {
-        "basic": {
-          "imgae": "ssss",
-        },
-        "square": {
-          
-        }
-      }
-    }
 
 | Field Name | requirement | note |
 | :--------- | ----------- | ---- |
-| title      | Y           |      |
-| description| Y           |      |
-| category   | Y           | 
-| theme      | Y           | supporting theme options |
+| title      | Y, String   |      |
+| description| Y, String   |      |
+| category   | Y, String   |      |
+| tags       | N, Array    |      |
+| logo       | N, String   | vaild URL | 
+| theme      | Y, String   | theme options, those are used by theme |
 
 
 # How to install & build
