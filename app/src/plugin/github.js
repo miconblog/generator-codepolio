@@ -19,6 +19,7 @@ var Q = require('q');
 var request = require('request');
 var _ = require('lodash');
 var chalk = require('chalk');
+var moment = require('moment');
 
 module.exports = {
   load : function github(options){
@@ -61,6 +62,7 @@ module.exports = {
             
             try{
               var hub = JSON.parse(body);
+              hub.generated_at = moment().format()
               hub.provider = 'github';
               hub.github = repo
               hubpolio.push(hub);

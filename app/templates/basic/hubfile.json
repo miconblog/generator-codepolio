@@ -10,6 +10,7 @@
 			"basic": {},
 			"square": {}
 		},
+		"generated_at": "2015-03-02T16:25:32+09:00",
 		"provider": "github",
 		"github": {
 			"id": 29660643,
@@ -75,8 +76,8 @@
 			"labels_url": "https://api.github.com/repos/miconblog/generator-hubpolio/labels{/name}",
 			"releases_url": "https://api.github.com/repos/miconblog/generator-hubpolio/releases{/id}",
 			"created_at": "2015-01-22T05:24:36Z",
-			"updated_at": "2015-02-27T08:37:49Z",
-			"pushed_at": "2015-02-27T08:37:49Z",
+			"updated_at": "2015-03-02T07:19:02Z",
+			"pushed_at": "2015-03-02T07:19:02Z",
 			"git_url": "git://github.com/miconblog/generator-hubpolio.git",
 			"ssh_url": "git@github.com:miconblog/generator-hubpolio.git",
 			"clone_url": "https://github.com/miconblog/generator-hubpolio.git",
@@ -92,9 +93,9 @@
 			"has_pages": false,
 			"forks_count": 1,
 			"mirror_url": null,
-			"open_issues_count": 7,
+			"open_issues_count": 6,
 			"forks": 1,
-			"open_issues": 7,
+			"open_issues": 6,
 			"watchers": 0,
 			"default_branch": "master"
 		}

@@ -5,11 +5,13 @@
   "license": "MIT",
   "main": "app/index.js",
   "repository": "miconblog/generator-hubpolio",
-  "author": [{
-    "name": "Byungdae Sohn",
-    "email": "miconblog@gmail.com",
-    "url": "http://miconblog.com/"
-  }],
+  "author": [
+    {
+      "name": "Byungdae Sohn",
+      "email": "miconblog@gmail.com",
+      "url": "http://miconblog.com/"
+    }
+  ],
   "engines": {
     "node": ">=0.10.0"
   },
@@ -30,6 +32,7 @@
   "dependencies": {
     "chalk": "^0.5.1",
     "lodash": "^3.1.0",
+    "moment": "^2.9.0",
     "yeoman-generator": "^0.18.8",
     "yosay": "^1.0.2"
   },
