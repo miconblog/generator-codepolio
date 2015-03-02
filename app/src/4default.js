@@ -6,20 +6,22 @@
 var _ = require('lodash');
 var chalk = require('chalk');
 var github = require('./plugin/github.js');
+var fs = require('fs');
 
 module.exports = function (Generator) {
   Generator.prototype.default = function() {
+    var self = this;
 
-    //console.log('4. default');
-    // TODO: Collect repository meta infomation...
-    // --> JSON 데이터를 어떻게 쓰냐?
     github.load()
     .then(function(repos){
-      console.log('then....', repos)
+      fs.writeFile(
+        self.templatePath(self.props.theme + '/hubfile.json'), 
+        JSON.stringify(repos, null, '\t'), function(){
+      });
     })
     .fail(function (error) {
         // Handle any error from all above steps
-      console.log('fail', error);
+      console.log(chalk.red(error));
     });
 
 

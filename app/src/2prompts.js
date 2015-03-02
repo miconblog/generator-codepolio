@@ -18,7 +18,6 @@ module.exports = function (Generator) {
       var done = this.async();
       this.prompt(prompts, function(answers){
 
-        //console.log(this, answers);
         this.props = answers;
 
         done();
@@ -27,7 +26,7 @@ module.exports = function (Generator) {
     },
 
     second: function(){
-      console.log("testse second")
+      console.log("TODO:// input user account info");
     }
 
   }

@@ -18,6 +18,7 @@
 var Q = require('q');
 var request = require('request');
 var _ = require('lodash');
+var chalk = require('chalk');
 
 module.exports = {
   load : function github(options){
@@ -57,15 +58,15 @@ module.exports = {
         request.get(params,  function(err, res, body){
 
           if( res.statusCode === 200 ){
-
+            
+            try{
               var hub = JSON.parse(body);
-
-              if(options.provider) {
-                hub.provider = 'github';
-                hub.github = repo
-              }
-
+              hub.provider = 'github';
+              hub.github = repo
               hubpolio.push(hub);
+            } catch(e){
+              console.log(chalk.red('[JSON parse Error] check your hub.json file in', repo.full_name));
+            }
           }
 
           refCount--;

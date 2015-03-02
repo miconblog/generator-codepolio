@@ -10,6 +10,6 @@ var chalk = require('chalk');
 module.exports = function (Generator) {
   Generator.prototype.configuring = function() {
 
-    console.log("My Properties: ", this.props);
+    console.log("Your selections (this.props): ", this.props);
   }
 }
