@@ -9,9 +9,9 @@ var chalk = require('chalk');
 module.exports = function (Generator) {
   Generator.prototype.install = function() {
 
-    // this.installDependencies({
-    //   skipInstall: this.options['skip-install']
-    // });
+    this.installDependencies({
+      skipInstall: this.options['skip-install']
+    });
 
   }
 }

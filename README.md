@@ -5,16 +5,19 @@
 # Hubpolio Yeoman Generator
 makes your portfolio site with your repositories. For this you need to put an metafile(hub.json) to your repository each first.
 
-# This is the sample hub.json
+# hub.json Format
+Working Now.... 
 
-| Field Name | requirement | note |
-| :--------- | ----------- | ---- |
-| title      | Y, String   |      |
-| description| Y, String   |      |
-| category   | Y, String   |      |
-| tags       | N, Array    |      |
-| logo       | N, String   | vaild URL | 
-| theme      | Y, String   | theme options, those are used by theme |
+| Field Name   | requirement | note |
+| :----------- | ----------- | ---- |
+| title        | Y, String   |      |
+| description  | Y, String   |      |
+| category     | Y, String   |      |
+| tags         | N, Array    |      |
+| languages    | N, Array    | generated automatically in Github |
+| generated_at | N, Array    | generated automatically |
+| logo         | N, String   | vaild URL | 
+| theme        | Y, String   | theme options, those are used by theme |
 
 
 # How to install & build

@@ -5,9 +5,9 @@ var assert = require('yeoman-generator').assert;
 var path = require('path');
 
 
-describe('Hublipolio Generator', function(){
+describe('Hublipolio Scaffolding', function(){
 
-  describe('run test', function(){
+  describe('must have some files and folders after generating', function(){
 
     var runGen;
 
@@ -19,7 +19,7 @@ describe('Hublipolio Generator', function(){
       'src',
       'gulp',
       'gulpfile.js'
-  ];
+    ];
 
     beforeEach(function () {
       runGen = helpers
