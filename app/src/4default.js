@@ -15,7 +15,7 @@ module.exports = function (Generator) {
     github.load()
     .then(function(repos){
       fs.writeFile(
-        self.templatePath(self.props.theme + '/hubfile.json'), 
+        self.destinationPath('hubfile.json'), 
         JSON.stringify(repos, null, '\t'), function(){
       });
     })
