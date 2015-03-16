@@ -1,0 +1,17 @@
+[
+	{
+		"title": "Hubpolio",
+		"description": "make your portfolio site with your repositories",
+		"category": "Yeoman Generator",
+		"tags": [
+			"javascript"
+		],
+		"theme": {
+			"basic": {},
+			"square": {}
+		},
+		"generated_at": "2015-03-14T17:34:59+09:00",
+		"provider": "github",
+		"language": "JavaScript"
+	}
+]

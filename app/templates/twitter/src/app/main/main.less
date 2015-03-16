@@ -1,0 +1,89 @@
+#main, div.header, li.repo {
+	height: 400px;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.7);
+	box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+
+	h1 {
+		margin: 30px;
+	}
+
+	h1, p {
+		margin-right: 15px;
+		margin-left: 15px;
+	}
+}
+
+div.header {
+	text-align: left;
+	h1, p {
+		margin: 10px 15px 0;
+	}
+	height: 130px;
+}
+
+#num-repos, #num-members {
+	font-weight: bold;
+	font-size: 14px;
+	color: #0084b4;
+	line-height: 15px;
+}
+
+#recently-updated h1 a {
+	font-size: 11px;
+	font-weight: normal;
+}
+
+.grid {
+	.grid-1 {
+		width: 220px;
+	}
+	.grid-2 {
+		width: 460px;
+	}
+	.grid-3 {
+		width: 700px;
+	}
+}
+
+.grid-1, .grid-2, .grid-3, .grid-4 {
+	display: inline;
+	float: left;
+	position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.alpha {
+	margin-left: 0px;
+}
+.omega {
+	margin-right: 0px;
+}
+
+li.repo {
+	text-align: left;
+	height: 250px;
+
+	h2, h3, p {
+		margin: 10px 15px;
+	}
+}
+
+.repo.javascript:after {
+	border-right-color: #333;
+}
+
+.repo:after {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 0;
+	height: 0;
+	border-bottom: 50px solid transparent;
+	border-left: 50px solid transparent;
+	border-right: 50px solid #0080b0;
+	pointer-events: none;
+}

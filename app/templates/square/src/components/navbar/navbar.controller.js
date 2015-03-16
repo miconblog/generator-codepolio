@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('themeSquare')
+angular.module('hubpolio')
   .controller('NavbarCtrl', function ($scope) {
     $scope.date = new Date();
   });

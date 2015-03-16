@@ -1,0 +1,40 @@
+<div id="main" class="grid-1">
+  <div id="logo">
+    <h1> Twitter Theme </h1>
+  </div>
+  <h1>Twitter is built on open source software</h1>
+  <p>Want to help? <a href="https://twitter.com/jobs">Join the Flock</a></p>
+  <p>Visite <a href="https://dev.twitter.com/">dev.twitter.com</a></p>
+  <p><a href="https://twitter.com/about/resources">Logos and other goodies</a></p>
+
+  <div class="footer">
+    <p><a class="hublink" href="https://github.com/miconblog/hubfolio">hubpolio</a> &copy; copyleft 2015 </p>
+  </div>
+</div>
+
+<div class="grid grid-3">
+  <div id="statistics" class="grid-1 alpha header">
+    <h1>Statistics</h1>
+    <p>
+      <a href="https://github.com/twitter/repositories"><span id="num-repos"><!-- <img src="assests/spinner.gif"/> -->5</span> public repos</a>
+    </p>
+    <p>
+      <a href="https://github.com/twitter/repositories"><span id="num-members"><!-- <img src="assests/spinner.gif"/> -->5</span> members</a>
+    </p>
+    <p class="email"><a href="mailto:opensource@twitter.com">opensource@twitter.com</a></p>
+  </div>
+
+  <div id="recently-updated" class="grid-2 omega header">
+    <h1>Recently update <a href="https://github.com/twitter/repositories">View All on GitHub</a></h1>
+    <ol id="recently-updated-repos">
+
+    </ol>
+  </div>
+</div>
+<ol id="repos">
+  <li class="repo grid-1 {{portfolio.language}}" ng-repeat="portfolio in portfolios | orderBy:'rank'">
+    <h2>{{portfolio.title}}</h2>
+    <h3>{{portfolio.language}}</h3>
+    <p>{{portfolio.description}}</p>
+  <li>
+</ol>
