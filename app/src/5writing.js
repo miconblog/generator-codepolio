@@ -49,6 +49,19 @@ module.exports = function (Generator) {
         this.templatePath(this.props.theme + '/gulp/'),
         this.destinationPath('gulp/')
       ); 
+    },
+
+    plugins: function(){
+
+      if(this.props.Github){
+        this.fs.copyTpl(
+          this.templatePath('_github.js'),
+          this.destinationPath('gulp/github.js'),
+          {
+            username: this.props.Github
+          }
+        );
+      }
     }
 
   }

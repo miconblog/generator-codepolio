@@ -19,13 +19,12 @@ var Q = require('q');
 var request = require('request');
 var _ = require('lodash');
 var chalk = require('chalk');
-var moment = require('moment');
 
 module.exports = {
   load : function github(options){
 
     var params = {
-      url:'https://api.github.com/users/miconblog/repos',
+      url:'https://api.github.com/users/<%= username %>/repos',
       headers: {
         'User-Agent':'Node'
       }
@@ -62,7 +61,6 @@ module.exports = {
             
             try{
               var hub = JSON.parse(body);
-              hub.generated_at = moment().format()
               hub.provider = 'github';
               hub.github = repo
               hubpolio.push(hub);

@@ -19,7 +19,6 @@ angular.module('hubpolio')
           }
 
         });
-        console.log($scope)
 
         $scope.owner = portfolios[0].owner;
         $scope.statistics = {
@@ -28,7 +27,9 @@ angular.module('hubpolio')
         }
         $scope.portfolios.forEach(function(portfolio) {
           portfolio.rank = Math.random();
-        });
-
+        });        
+        $scope.updateinfo = {
+          generated_at : moment().fromNow()
+        }
       });
   });

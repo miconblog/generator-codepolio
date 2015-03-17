@@ -9,7 +9,8 @@ var chalk = require('chalk');
 module.exports = function (Generator) {
   Generator.prototype.conflicts = function() {
 
-    //console.log('6. conflicts');
+  	// forced overwrite all files
+  	this.conflicter.force = true;
 
   }
 }

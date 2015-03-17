@@ -2,29 +2,48 @@
 
 var gulp = require('gulp');
 var fs = require('fs');
-var hubs = require('../hubfile.json');
-var jam = [];
+var chalk = require('chalk');
+var Q = require('q');
 
 gulp.task('hubjam', function(){
+  var deferred = Q.defer();
+  var jam = [];
+  var github = require('./github.js');
 
-  hubs.forEach(function(hub){
-    if( hub.provider ){
-      var item = hub[hub.provider];
-      hub.url = item.svn_url;
-      hub.language = item.language;
-      hub.fork_count = item.forks_count;
-      hub.star_count = item.stargazers_count;
-      hub.watcher_count = item.watchers_count;
-      hub.private = item.private;
-      hub.owner = item.owner;
+  github.load()
+  .then(function(repos){
+    
+    repos.forEach(function(repo){
 
-      delete hub[hub.provider];
-    }
-    jam.push(hub);    
+      if( repo.provider ){
+        
+        // custom for theme 
+        var item = repo[repo.provider];
+        repo.url = item.svn_url;
+        repo.language = repo.language ? repo.language : item.language;
+        repo.fork_count = item.forks_count;
+        repo.star_count = item.stargazers_count;
+        repo.watcher_count = item.watchers_count;
+        repo.private = item.private;
+        repo.owner = item.owner;
+
+        delete repo[repo.provider];
+      }
+      jam.push(repo);    
+    });
+
+    fs.writeFile("src/app/hubfile.json",
+      JSON.stringify(jam, null, '\t'), function(){
+        deferred.resolve();
+      }
+    );
+
+  })
+  .fail(function (error) {
+      // Handle any error from all above steps
+    console.log(chalk.red(error));
+    deferred.resolve();
   });
 
-  fs.writeFile("src/app/hubfile.json",
-    JSON.stringify(jam, null, '\t'), function(){}
-  );
-
+  return deferred.promise;
 });
