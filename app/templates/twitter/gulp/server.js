@@ -31,7 +31,7 @@ function browserSyncInit(baseDir, files, browser) {
   });
 }
 
-gulp.task('serve', ['watch'], function () {
+gulp.task('serve', ['hubjam','watch'], function () {
   browserSyncInit([
     paths.tmp + '/serve',
     paths.src

@@ -1,14 +1,19 @@
 <div id="main" class="grid-1">
   <div id="logo">
-    <h1> Twitter Theme </h1>
+    <h1>{{owner.login}}'s <a class="hublink" href="https://github.com/miconblog/hubfolio">Hubpolio</a></h1>
   </div>
-  <h1>Twitter is built on open source software</h1>
-  <p>Want to help? <a href="https://twitter.com/jobs">Join the Flock</a></p>
-  <p>Visite <a href="https://dev.twitter.com/">dev.twitter.com</a></p>
-  <p><a href="https://twitter.com/about/resources">Logos and other goodies</a></p>
-
+  <div method="get" action="/search" id="search">
+    <input name="q" type="text" size="40" ng-model="searchText" placeholder="Search Repository..." />
+  </div>
+  <div class="profile">
+    <a href="{{owner.html_url}}">
+      <img src="{{owner.avatar_url}}"/>
+    </a>
+  </div>
   <div class="footer">
-    <p><a class="hublink" href="https://github.com/miconblog/hubfolio">hubpolio</a> &copy; copyleft 2015 </p>
+    <p>from <a href="https://twitter.github.io/">twitter.github.io</a></p>
+    <p> designed by miconblog </p>
+    <p> &copy; hubpolio 2015 </p>
   </div>
 </div>
 
@@ -16,25 +21,38 @@
   <div id="statistics" class="grid-1 alpha header">
     <h1>Statistics</h1>
     <p>
-      <a href="https://github.com/twitter/repositories"><span id="num-repos"><!-- <img src="assests/spinner.gif"/> -->5</span> public repos</a>
+      <a href="https://github.com/twitter/repositories"><span id="num-repos"><!-- <img src="assests/spinner.gif"/> -->{{statistics.public_repos_count}}</span> public repos</a>
     </p>
     <p>
-      <a href="https://github.com/twitter/repositories"><span id="num-members"><!-- <img src="assests/spinner.gif"/> -->5</span> members</a>
+      <a href="https://github.com/twitter/repositories"><span id="num-members"><!-- <img src="assests/spinner.gif"/> -->{{statistics.private_repos_count}}</span> private repos</a>
     </p>
     <p class="email"><a href="mailto:opensource@twitter.com">opensource@twitter.com</a></p>
   </div>
 
   <div id="recently-updated" class="grid-2 omega header">
-    <h1>Recently update <a href="https://github.com/twitter/repositories">View All on GitHub</a></h1>
+    <h1>Recently update <a href="https://github.com/{{owner.login}}/repositories">View All on GitHub</a></h1>
     <ol id="recently-updated-repos">
-
+      <li>
+       <!--  <span class="name"><a href="https://github.com/twitter/AnomalyDetection">AnomalyDetection</a></span>
+        <span class="time"><a href="https://github.com/twitter/AnomalyDetection/commits">Mar 16, 2015</a></span>
+        <span class="bullet">⋅</span>
+        <span class="watchers"><a href="https://github.com/twitter/AnomalyDetection/watchers">864 stargazers</a></span>
+        <span class="bullet">⋅</span>
+        <span class="forks"><a href="https://github.com/twitter/AnomalyDetection/network">113 forks</a></span> -->
+      </li>
     </ol>
   </div>
 </div>
 <ol id="repos">
-  <li class="repo grid-1 {{portfolio.language}}" ng-repeat="portfolio in portfolios | orderBy:'rank'">
-    <h2>{{portfolio.title}}</h2>
-    <h3>{{portfolio.language}}</h3>
-    <p>{{portfolio.description}}</p>
+  <li class="repo grid-1 {{portfolio.language.toLowerCase()}}" ng-repeat="portfolio in portfolios | orderBy:'rank'  | filter:searchText">
+    <a href="{{portfolio.url}}">
+      <h2>{{portfolio.title}}</h2>
+      <h3>{{portfolio.language}}, {{portfolio.category}}</h3>
+      <p>{{portfolio.description}}</p>
+      <div class="info">
+        <p class="star">Star {{portfolio.star_count}}</p>
+        <p class="fork">Fork {{portfolio.fork_count}}</p>
+      </div>
+    </a>
   <li>
 </ol>

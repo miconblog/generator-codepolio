@@ -1,3 +1,28 @@
+/** search bar */
+#search {
+	margin-bottom: 20px;
+}
+
+#search input[type="text"] {
+	width: 50%;
+    background: url(assets/search-white.png) no-repeat 10px 6px #fcfcfc;
+    border: 1px solid #d1d1d1;
+    //font: bold 12px Arial,Helvetica,Sans-serif;
+    color: #bebebe;
+    padding: 6px 15px 6px 35px;
+    border-radius: 10px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    transition: all 0.3s ease 0s;
+ }
+
+#search input[type="text"]:focus {
+	width: 70%;
+	outline: none;
+}
+
+
+/* main */
 #main, div.header, li.repo {
 	height: 400px;
 	text-align: center;
@@ -6,12 +31,24 @@
 	margin-bottom: 20px;
 
 	h1 {
-		margin: 30px;
+		margin: 30px 20px 10px 20px;
 	}
 
 	h1, p {
 		margin-right: 15px;
 		margin-left: 15px;
+	}
+
+	.profile img{
+		width: 160px;
+		border-radius: 5px;
+		box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+	}
+
+	.footer {
+		position: absolute;
+		bottom: 20px;
+		width: 220px;
 	}
 }
 
@@ -28,6 +65,10 @@ div.header {
 	font-size: 14px;
 	color: #0084b4;
 	line-height: 15px;
+}
+
+#recently-updated-repos {
+	margin-left: 15px;
 }
 
 #recently-updated h1 a {
@@ -69,7 +110,54 @@ li.repo {
 	h2, h3, p {
 		margin: 10px 15px;
 	}
+
+	h3 {
+		font-size: 11px;
+	  	margin-top: 2px;
+	  	margin-bottom: 15px;
+	  	color: #999;
+	}
+
+	> a {
+	  display: block;
+	  width: 100%;
+	  height: 100%;
+	  overflow: hidden;
+	  text-decoration: none;
+	  color: inherit;
+	}
+
+	a:hover {
+	  background: #efefef;
+	  background: rgba(0, 0, 0, 0.05);
+	}
+
+	div.info {
+		position: absolute;
+		bottom: 0;
+		height: 40px;
+		width: 100%;
+		border-top: 1px solid #ccc;
+
+		p {
+			//position: absolute;
+			float: right;
+			font-weight: bold;
+			font-size: 12px;
+
+			&.watch {
+				left: 0px;
+			}
+			&.star {
+				left: 72px;
+			}
+			&.fork {
+				right: 0px;
+			}
+		}
+	}
 }
+
 
 .repo.javascript:after {
 	border-right-color: #333;
