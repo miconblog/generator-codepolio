@@ -20,40 +20,39 @@ makes your portfolio site with your repositories. For this you need to put an me
 
 # How to install & build
 
-#### Install from npm
+install from npm
 ```bash
 $> npm install -g generator-codepolio
 ```
 
-#### Install from source code for development
+install from source code for development
 ```bash
 $> cd generator-codepolio
 $> npm link
 ```
 
-#### Finally, initiate the generator:
-
+finally, initiate the generator:
 ```bash
 $> yo codepolio
 ```
 
 # How to build & run 
-#### First of all, you have to make **sweet code jam**
+First of all, you have to make **sweet code jam**
 ```bash
 $ yoursite/> gulp codejam
 ```
 
-#### serve to local for development
+serve to local for development
 ```bash
 $ yoursite/> gulp serve
 ```
 
-#### build for deploy 
+build for deploy 
 ```bash
 $ yoursite/> gulp build
 ```
 
-#### deploy github pages (plan for 0.2.0 ver.)
+deploy github pages (plan for 0.2.0 ver.)
 ```bash
 $ yoursite/> gulp deploy
 ```
