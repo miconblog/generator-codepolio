@@ -25,13 +25,13 @@ module.exports = {
   load : function bitbucket(options){
 
     var params = {
-      url:'https://bitbucket.org/api/2.0/repositories/miconblog',
+      url:'https://bitbucket.org/api/2.0/repositories/<%= username %>',
       headers: {
         'User-Agent':'Node'
       }
     };
     var deferred = Q.defer();
-    var hubpolio = [];
+    var codejam = [];
     var refCount = 0;
     var options = _.extend({}, options);
     _.defaults(options, {
@@ -56,27 +56,27 @@ module.exports = {
 
         // https://bitbucket.org/miconblog/maeul/raw/202eff3c1cb8eb5ede6b3543ef576310a16a9efa/README.md
 
-        params.url = "https://bitbucket.org/" + repo.full_name + "/master/hub.json";
+        params.url = "https://bitbucket.org/" + repo.full_name + "/master/code.jam";
 
         request.get(params,  function(err, res, body){
 
           if( res.statusCode === 200 ){
             
             try{
-              var hub = JSON.parse(body);
-              hub.generated_at = moment().format()
-              hub.provider = 'github';
-              hub.github = repo
-              hubpolio.push(hub);
+              var jam = JSON.parse(body);
+              jam.generated_at = moment().format()
+              jam.provider = 'github';
+              jam.github = repo
+              codejam.push(jam);
             } catch(e){
-              console.log(chalk.red('[JSON parse Error] check your hub.json file in', repo.full_name));
+              console.log(chalk.red('[JSON parse Error] check your code.jam file in', repo.full_name));
             }
           }
 
           refCount--;
 
           if(refCount === 0){
-            deferred.resolve(hubpolio);
+            deferred.resolve(codejam);
           }
 
         });

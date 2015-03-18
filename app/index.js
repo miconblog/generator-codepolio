@@ -3,7 +3,7 @@ var generators = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 
-var HubpolioGenerator = generators.Base.extend({
+var CodepolioGenerator = generators.Base.extend({
 
   constructor: function(){
     generators.Base.apply(this, arguments);
@@ -22,13 +22,13 @@ var HubpolioGenerator = generators.Base.extend({
   }
 
 });
-module.exports = HubpolioGenerator;
+module.exports = CodepolioGenerator;
 
-require('./src/1initializing')(HubpolioGenerator);
-require('./src/2prompts')(HubpolioGenerator);
-require('./src/3configuring')(HubpolioGenerator);
-require('./src/4default')(HubpolioGenerator);
-require('./src/5writing')(HubpolioGenerator);
-require('./src/6conflicts')(HubpolioGenerator);
-require('./src/7install')(HubpolioGenerator);
-require('./src/8end')(HubpolioGenerator);
+require('./src/1initializing')(CodepolioGenerator);
+require('./src/2prompts')(CodepolioGenerator);
+require('./src/3configuring')(CodepolioGenerator);
+require('./src/4default')(CodepolioGenerator);
+require('./src/5writing')(CodepolioGenerator);
+require('./src/6conflicts')(CodepolioGenerator);
+require('./src/7install')(CodepolioGenerator);
+require('./src/8end')(CodepolioGenerator);

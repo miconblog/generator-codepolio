@@ -19,7 +19,7 @@ gulp.task('partials', function () {
       quotes: true
     }))
     .pipe($.angularTemplatecache('templateCacheHtml.js', {
-      module: 'hubpolio'
+      module: 'codepolio'
     }))
     .pipe(gulp.dest(paths.tmp + '/partials/'));
 });
@@ -84,4 +84,4 @@ gulp.task('clean', function (done) {
   $.del([paths.dist + '/', paths.tmp + '/'], done);
 });
 
-gulp.task('build', ['html', 'images', 'fonts', 'misc', 'hubjam']);
+gulp.task('build', ['html', 'images', 'fonts', 'misc', 'codejam']);

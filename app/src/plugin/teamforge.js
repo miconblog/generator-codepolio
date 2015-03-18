@@ -137,7 +137,7 @@ function getScmInfos(info) {
 
 
 
-function getHubfolio(info) {
+function getCodepolio(info) {
     var deferred = Q.defer();
 
 
@@ -166,7 +166,7 @@ function getFileFromGit(url) {
 module.exports = {
     load : function github(options){
 
-        var hubpolio = [];
+        var codejam = [];
         var options = _.extend({}, options);
         _.defaults(options, {
             provider : false
@@ -180,7 +180,7 @@ module.exports = {
             .then(getScm)
             .then(getRepository)
             .then(getScmInfos)
-            .then(getHubfolio);
+            .then(getCodepolio);
     }
 
 };

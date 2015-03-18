@@ -5,7 +5,7 @@ var fs = require('fs');
 var chalk = require('chalk');
 var Q = require('q');
 
-gulp.task('hubjam', function(){
+gulp.task('codejam', function(){
   var deferred = Q.defer();
   var jam = [];
   var github = require('./github.js');
@@ -32,7 +32,7 @@ gulp.task('hubjam', function(){
       jam.push(repo);    
     });
 
-    fs.writeFile("src/app/hubfile.json",
+    fs.writeFile("src/app/sweetcode.jam",
       JSON.stringify(jam, null, '\t'), function(){
         deferred.resolve();
       }

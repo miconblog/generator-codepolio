@@ -30,7 +30,7 @@ module.exports = {
       }
     };
     var deferred = Q.defer();
-    var hubpolio = [];
+    var codejam = [];
     var refCount = 0;
     var options = _.extend({}, options);
     _.defaults(options, {
@@ -53,26 +53,26 @@ module.exports = {
 
       repos.forEach(function(repo){
 
-        params.url = "https://raw.githubusercontent.com/" + repo.full_name + "/master/hub.json";
+        params.url = "https://raw.githubusercontent.com/" + repo.full_name + "/master/code.jam";
 
         request.get(params,  function(err, res, body){
 
           if( res.statusCode === 200 ){
             
             try{
-              var hub = JSON.parse(body);
-              hub.provider = 'github';
-              hub.github = repo
-              hubpolio.push(hub);
+              var jam = JSON.parse(body);
+              jam.provider = 'github';
+              jam.github = repo
+              codejam.push(jam);
             } catch(e){
-              console.log(chalk.red('[JSON parse Error] check your hub.json file in', repo.full_name));
+              console.log(chalk.red('[JSON parse Error] check your code.jam file in', repo.full_name));
             }
           }
 
           refCount--;
 
           if(refCount === 0){
-            deferred.resolve(hubpolio);
+            deferred.resolve(codejam);
           }
 
         });

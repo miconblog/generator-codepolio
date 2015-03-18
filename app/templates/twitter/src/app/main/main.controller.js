@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('hubpolio')
+angular.module('codepolio')
   .controller('MainCtrl', function ($scope, $resource) {
 
-  	$resource('/app/hubfile.json')
+  	$resource('/app/sweetcode.jam')
       .query()
       .$promise
       .then(function(portfolios) {

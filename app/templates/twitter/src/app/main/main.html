@@ -1,6 +1,6 @@
 <div id="main" class="grid-1">
   <div id="logo">
-    <h1>{{owner.login}}'s <a class="hublink" href="https://github.com/miconblog/hubfolio">Hubpolio</a></h1>
+    <h1>{{owner.login}}'s <a class="link" href="https://github.com/miconblog/codepolio">Codepolio</a></h1>
   </div>
   <div method="get" action="/search" id="search">
     <input name="q" type="text" size="40" ng-model="searchText" placeholder="Search Repository..." />
@@ -11,9 +11,9 @@
     </a>
   </div>
   <div class="footer">
-    <p>from <a href="https://twitter.github.io/">twitter.github.io</a></p>
+    <p> <a href="mailto:{{owner.email}}">{{owner.email}}</a></p>
     <p> designed by miconblog </p>
-    <p> &copy; hubpolio 2015 </p>
+    <p> &copy; codepolio 2015 </p>
   </div>
 </div>
 
@@ -46,7 +46,7 @@
 <ol id="repos">
   <li class="repo grid-1 {{portfolio.language.toLowerCase()}}" ng-repeat="portfolio in portfolios | orderBy:'rank'  | filter:searchText">
     <a href="{{portfolio.url}}">
-      <h2>{{portfolio.title}}</h2>
+      <h2><span class="{{portfolio.provider}}"></span>{{portfolio.title}}</h2>
       <h3>{{portfolio.language}}, {{portfolio.category}}</h3>
       <p>{{portfolio.description}}</p>
       <div class="info">

@@ -1,14 +1,14 @@
-# generator-hubpolio [![Build Status](https://secure.travis-ci.org/miconblog/generator-hubpolio.png?branch=master)](https://travis-ci.org/miconblog/generator-hubpolio)
+# generator-codepolio [![Build Status](https://secure.travis-ci.org/miconblog/generator-codepolio.png?branch=master)](https://travis-ci.org/miconblog/generator-codepolio)
 
 > [Yeoman](http://yeoman.io) generator
 
-# Hubpolio Yeoman Generator
+# Codepolio Yeoman Generator
 makes your portfolio site with your repositories. For this you need to put an metafile(hub.json) to your repository each first.
 
 ## dependenices
 [Gulp](http://gulpjs.com/) & [Bower](http://bower.io/)
 
-## hub.json Format
+## code.jam (JSON) File Field Infomation
 | Field Name   | requirement | note |
 | :----------- | ----------- | ---- |
 | title        | Y, String   |  |
@@ -20,34 +20,40 @@ makes your portfolio site with your repositories. For this you need to put an me
 
 # How to install & build
 
-To install generator-hubpolio from npm, run:
-
+#### Install from npm
 ```bash
-$> npm install -g generator-hubpolio
-or
-$> cd generator-hubpolio
+$> npm install -g generator-codepolio
+```
+
+#### Install from source code for development
+```bash
+$> cd generator-codepolio
 $> npm link
 ```
 
-Finally, initiate the generator:
+#### Finally, initiate the generator:
 
 ```bash
-$> yo hubpolio
+$> yo codepolio
 ```
 
-# How to build your hubpolio site 
+# How to build & run 
+#### First of all, you have to make **sweet code jam**
+```bash
+$ yoursite/> gulp codejam
+```
 
-To develop yourself:
+#### serve to local for development
 ```bash
 $ yoursite/> gulp serve
 ```
 
-To build: 
+#### build for deploy 
 ```bash
 $ yoursite/> gulp build
 ```
 
-To deploy github pages: 
+#### deploy github pages (plan for 0.2.0 ver.)
 ```bash
 $ yoursite/> gulp deploy
 ```

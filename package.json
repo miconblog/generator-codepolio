@@ -1,10 +1,10 @@
 {
-  "name": "generator-hubpolio",
+  "name": "generator-codepolio",
   "version": "0.1.0",
   "description": "Build portfolio website with your repositories",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "miconblog/generator-hubpolio",
+  "repository": "miconblog/generator-codepolio",
   "author": [
     {
       "name": "Byungdae Sohn",
@@ -23,12 +23,12 @@
   ],
   "keywords": [
     "yeoman-generator",
-    "hubpolio"
+    "codepolio"
   ],
   "bugs": {
-    "url": "https://github.com/miconblog/generator-hubpolio/issues"
+    "url": "https://github.com/miconblog/generator-codepolio/issues"
   },
-  "homepage": "https://github.com/miconblog/generator-hubpolio",
+  "homepage": "https://github.com/miconblog/generator-codepolio",
   "dependencies": {
     "chalk": "^0.5.1",
     "lodash": "^3.1.0",
