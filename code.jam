@@ -1,5 +1,5 @@
 { 
-  "title": "Hubpolio",
+  "title": "codepolio",
   "description": "Make your portfolio site with your repositories. supported Github, Bitbucket, TeamForge and so on. also you can select a theme and customize it yourself.",
   "category" : "Yeoman Generator",
   "demo_link": "http://miconblog.github.io"
