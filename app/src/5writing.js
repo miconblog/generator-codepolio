@@ -23,11 +23,11 @@ module.exports = function (Generator) {
 
     projectfiles: function () {
       this.fs.copy(
-        this.templatePath(this.props.theme + '/editorconfig'),
+        this.templatePath('editorconfig'),
         this.destinationPath('.editorconfig')
       );
       this.fs.copy(
-        this.templatePath(this.props.theme + '/jshintrc'),
+        this.templatePath('jshintrc'),
         this.destinationPath('.jshintrc')
       );
     },
