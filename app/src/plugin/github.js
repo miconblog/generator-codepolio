@@ -24,7 +24,7 @@ module.exports = {
   load : function github(options){
 
     var params = {
-      url:'https://api.github.com/users/<%= username %>/repos',
+      url:'https://api.github.com/users/'+options.username+'/repos',
       headers: {
         'User-Agent':'Node'
       }

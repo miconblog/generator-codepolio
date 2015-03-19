@@ -5,12 +5,23 @@ var fs = require('fs');
 var chalk = require('chalk');
 var Q = require('q');
 
+gulp.task('sweetcode.jam', function(){
+
+  if( !fs.existsSync("src/app/sweetcode.jam") ){
+    console.error(chalk.red('please, run "gulp codejam" first!'));
+    process.exit(1);
+  }
+
+});
+
 gulp.task('codejam', function(){
   var deferred = Q.defer();
-  var jam = [];
+  var codejam = require('../.yo-rc');
   var github = require('./github.js');
 
-  github.load()
+  codejam.repos = [];
+
+  github.load({username: codejam['generator-codepolio'].github})
   .then(function(repos){
     
     repos.forEach(function(repo){
@@ -27,13 +38,13 @@ gulp.task('codejam', function(){
         repo.private = item.private;
         repo.owner = item.owner;
 
-        delete repo[repo.provider];
+        //delete repo[repo.provider];
       }
-      jam.push(repo);    
+      codejam.repos.push(repo);    
     });
 
     fs.writeFile("src/app/sweetcode.jam",
-      JSON.stringify(jam, null, '\t'), function(){
+      JSON.stringify(codejam, null, '\t'), function(){
         deferred.resolve();
       }
     );

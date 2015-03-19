@@ -9,59 +9,21 @@ var chalk = require('chalk');
 module.exports = function (Generator) {
   Generator.prototype.writing = {
     
-    app: function(){ 
-      this.fs.copy(
-        this.templatePath(this.props.theme + '/package.json'),
-        this.destinationPath('package.json')
-      );
-
-      this.fs.copy(
-        this.templatePath(this.props.theme + '/bower.json'),
-        this.destinationPath('bower.json')
-      );
-    },
-
-    projectfiles: function () {
-      this.fs.copy(
-        this.templatePath('editorconfig'),
-        this.destinationPath('.editorconfig')
-      );
-      this.fs.copy(
-        this.templatePath('jshintrc'),
-        this.destinationPath('.jshintrc')
-      );
-    },
-
-    src: function(){
-      this.fs.copy(
-        this.templatePath(this.props.theme + '/src/'),
-        this.destinationPath('src/')
-      ); 
-    },
-
-    gulp: function(){
-      this.fs.copy(
-        this.templatePath(this.props.theme + '/gulpfile.js'),
-        this.destinationPath('gulpfile.js')
-      );
-
-      this.fs.copy(
-        this.templatePath(this.props.theme + '/gulp/'),
-        this.destinationPath('gulp/')
-      ); 
-    },
-
     plugins: function(){
-
-      if(this.props.Github){
-        this.fs.copyTpl(
-          this.templatePath('_github.js'),
-          this.destinationPath('gulp/github.js'),
-          {
-            username: this.props.Github
-          }
+      if(this.props.github){
+        this.fs.copy(
+          this.templatePath('../src/plugin/github.js'),
+          this.destinationPath('gulp/github.js')
         );
       }
+
+      if(this.props.bitbucket){
+        this.fs.copy(
+          this.templatePath('../src/plugin/bitbucket.js'),
+          this.destinationPath('gulp/bitbucket.js')
+        );
+      }
+
     }
 
   }

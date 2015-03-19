@@ -57,6 +57,10 @@ deploy github pages (plan for 0.2.0 ver.)
 $ yoursite/> gulp deploy
 ```
 
+# References
+[How to debug yeoman generator](http://techblog.dorogin.com/2014/04/how-to-debug-yeoman-generator.html)
+
+
 ## License
 
 MIT

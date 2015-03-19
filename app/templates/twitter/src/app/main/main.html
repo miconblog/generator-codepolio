@@ -1,6 +1,6 @@
 <div id="main" class="grid-1">
   <div id="logo">
-    <h1>{{owner.login}}'s <a class="link" href="https://github.com/miconblog/codepolio">Codepolio</a></h1>
+    <h1>{{owner.login}}'s <a class="link" href="https://github.com/miconblog/codepolio">codepolio</a></h1>
   </div>
   <div method="get" action="/search" id="search">
     <input name="q" type="text" size="40" ng-model="searchText" placeholder="Search Repository..." />
@@ -12,7 +12,7 @@
   </div>
   <div class="footer">
     <p> <a href="mailto:{{owner.email}}">{{owner.email}}</a></p>
-    <p> designed by miconblog </p>
+    <p> designed by <a href="http://miconblog.com">miconblog</a></p>
     <p> &copy; codepolio 2015 </p>
   </div>
 </div>
@@ -26,7 +26,7 @@
     <p>
       <a href="https://github.com/twitter/repositories"><span id="num-members"><!-- <img src="assests/spinner.gif"/> -->{{statistics.private_repos_count}}</span> private repos</a>
     </p>
-    <p class="email"><a href="mailto:opensource@twitter.com">opensource@twitter.com</a></p>
+    <!-- <p class="email"><a href="mailto:opensource@twitter.com">opensource@twitter.com</a></p> -->
   </div>
 
   <div id="recently-updated" class="grid-2 omega header">
@@ -44,14 +44,14 @@
   </div>
 </div>
 <ol id="repos">
-  <li class="repo grid-1 {{portfolio.language.toLowerCase()}}" ng-repeat="portfolio in portfolios | orderBy:'rank'  | filter:searchText">
-    <a href="{{portfolio.url}}">
-      <h2><span class="{{portfolio.provider}}"></span>{{portfolio.title}}</h2>
-      <h3>{{portfolio.language}}, {{portfolio.category}}</h3>
-      <p>{{portfolio.description}}</p>
+  <li class="repo grid-1 {{repo.language.toLowerCase()}}" ng-repeat="repo in repos | orderBy:'rank'  | filter:searchText">
+    <a href="{{repo.url}}">
+      <h2><span class="{{repo.provider}}"></span>{{repo.title}}</h2>
+      <h3>{{repo.language}}, {{repo.category}}</h3>
+      <p>{{repo.description}}</p>
       <div class="info">
-        <p class="star">Star {{portfolio.star_count}}</p>
-        <p class="fork">Fork {{portfolio.fork_count}}</p>
+        <p class="star">Star {{repo.star_count}}</p>
+        <p class="fork">Fork {{repo.fork_count}}</p>
       </div>
     </a>
   <li>

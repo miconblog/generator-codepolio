@@ -3,16 +3,15 @@
 angular.module('codepolio')
   .controller('MainCtrl', function ($scope, $resource) {
 
-  	$resource('/app/sweetcode.jam')
-      .query()
+    $resource('/app/sweetcode.jam')
+      .get()
       .$promise
-      .then(function(portfolios) {
-  		  
+      .then(function(codejam) {
+        
         var public_repos_count = 0;
         
-        $scope.portfolios = portfolios;
-
-        portfolios.forEach(function(item){
+        $scope.repos = codejam.repos;
+        $scope.repos.forEach(function(item){
 
           if(!item.private){
             public_repos_count++;
@@ -20,13 +19,13 @@ angular.module('codepolio')
 
         });
 
-        $scope.owner = portfolios[0].owner;
+        $scope.owner = codejam.repos[0].owner;
         $scope.statistics = {
           public_repos_count : public_repos_count,
-          private_repos_count: portfolios.length - public_repos_count
+          private_repos_count: $scope.repos.length - public_repos_count
         }
-        $scope.portfolios.forEach(function(portfolio) {
-          portfolio.rank = Math.random();
+        $scope.repos.forEach(function(repo) {
+          repo.rank = Math.random();
         });        
         $scope.updateinfo = {
           generated_at : moment().fromNow()

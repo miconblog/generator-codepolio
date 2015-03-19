@@ -32,7 +32,6 @@ module.exports = function (Generator) {
         _.forEach(this.props.repositories,function(v) {
           requestUsername.push({
             "type" : "input",
-
             "name" : v,
             "message" : "insert "+v+" username"
           });
@@ -56,7 +55,6 @@ module.exports = function (Generator) {
         this.prompt([
           {
             "type" : "password",
-
             "name" : "teamforge_password",
             "message" : "insert your password"
           }], function(answers){

@@ -6,13 +6,16 @@
     "choices": [
       {
         "name": "Github",
+        "value": "github",
         "checked": true
       },
       {
-        "name": "Bitbucket"
+        "name": "Bitbucket",
+        "value": "bitbucket"
       },
       {
-        "name": "Teamforge"
+        "name": "Teamforge",
+        "value": "teamforge"
       }
     ]
   },

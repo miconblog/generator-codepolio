@@ -31,7 +31,7 @@ function browserSyncInit(baseDir, files, browser) {
   });
 }
 
-gulp.task('serve', ['watch'], function () {
+gulp.task('serve', ['sweetcode.jam','watch'], function () {
   browserSyncInit([
     paths.tmp + '/serve',
     paths.src
