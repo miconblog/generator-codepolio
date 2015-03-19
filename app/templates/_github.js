@@ -61,9 +61,14 @@ module.exports = {
             
             try{
               var jam = JSON.parse(body);
-              jam.provider = 'github';
-              jam.github = repo
-              codejam.push(jam);
+
+              // only for own repository
+              if( !jam.fork ) {
+                jam.provider = 'github';
+                jam.github = repo;
+                codejam.push(jam);
+              }
+
             } catch(e){
               console.log(chalk.red('[JSON parse Error] check your code.jam file in', repo.full_name));
             }
