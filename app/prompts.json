@@ -8,14 +8,6 @@
         "name": "Github",
         "value": "github",
         "checked": true
-      },
-      {
-        "name": "Bitbucket",
-        "value": "bitbucket"
-      },
-      {
-        "name": "Teamforge",
-        "value": "teamforge"
       }
     ]
   },
