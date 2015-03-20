@@ -5,27 +5,28 @@ var assert = require('yeoman-generator').assert;
 var path = require('path');
 
 
-describe('Hublipolio Scaffolding', function(){
+describe('Codepolio Scaffolding', function(){
 
   describe('must have some files and folders after generating', function(){
 
     var runGen;
 
     var expected = [
-      'package.json',
-      'bower.json',
-      '.editorconfig',
-      '.jshintrc',
-      'src',
-      'gulp',
-      'gulpfile.js'
+      ".editorconfig",
+      ".jshintrc",
+      ".yo-rc.json",
+      "bower.json",
+      "gulpfile.js",
+      "package.json",
+      "src",
+      "gulp"
     ];
 
     beforeEach(function () {
       runGen = helpers
         .run(path.join(__dirname, '../app'))
         .inDir(path.join(__dirname, '.tmp'))
-        .withPrompts({'repositories':['Github','Bitbuckte'],'theme':'basic'})
+        .withPrompts({'repositories':['github'],'theme':'twitter'})
         .withGenerators([[helpers.createDummyGenerator(), 'mocha:app']]);
     });
 
