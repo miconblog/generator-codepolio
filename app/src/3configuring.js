@@ -19,6 +19,15 @@ module.exports = function (Generator) {
       this.templatePath('../src/common/jshintrc'),
       this.destinationPath('.jshintrc')
     );
+    this.fs.copy(
+      this.templatePath('../src/common/gitignore'),
+      this.destinationPath('.gitignore')
+    );
+    this.fs.copyTpl(
+      this.templatePath('../src/common/_README.md'),
+      this.destinationPath('README.md'),
+      { username: this.props.github }
+    );
 
     // theme copy
     this.fs.copy(

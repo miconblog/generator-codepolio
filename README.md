@@ -1,5 +1,5 @@
-# generator-codepolio [![Build Status](https://secure.travis-ci.org/miconblog/generator-codepolio.png?branch=master)](https://travis-ci.org/miconblog/generator-codepolio)
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/miconblog/generator-codepolio/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+# generator-codepolio [![Build Status](https://secure.travis-ci.org/miconblog/generator-codepolio.png?branch=master)](https://travis-ci.org/miconblog/generator-codepolio) [![Dependency Status](https://david-dm.org/miconblog/generator-codepolio.svg)](https://david-dm.org/miconblog/generator-codepolio) [![devDependency Status](https://david-dm.org/miconblog/generator-codepolio/dev-status.svg)](https://david-dm.org/miconblog/generator-codepolio#info=devDependencies) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/miconblog/generator-codepolio/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 > [Yeoman](http://yeoman.io) generator
 
 # Codepolio Yeoman Generator
