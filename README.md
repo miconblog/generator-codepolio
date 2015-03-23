@@ -1,5 +1,5 @@
 # generator-codepolio [![Build Status](https://secure.travis-ci.org/miconblog/generator-codepolio.png?branch=master)](https://travis-ci.org/miconblog/generator-codepolio)
-
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/miconblog/generator-codepolio/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 > [Yeoman](http://yeoman.io) generator
 
 # Codepolio Yeoman Generator
@@ -8,15 +8,15 @@ To make your **portfolio site** with your code repositories like github and bitb
 ## Dependencies
 [Yeoman](http://yeoman.io), [Gulp](http://gulpjs.com/), [Bower](http://bower.io/)
 
-## code.jam (JSON): Field Infomation
-| Field Name   | requirement | note |
-| :----------- | ----------- | ---- |
-| title        | Y, String   |  |
-| description  | Y, String   |  |
-| languages    | N, Array    | generated automatically in Github |
-| generated_at | N, Array    | generated automatically |
-| ...etc...    | N, Any      | you can define any fields whatever you want to use in a theme |
-
+## code.jam Example
+```
+{ 
+  "title": "codepolio",
+  "description": "Make your portfolio site with your repositories. supported Github, Bitbucket, TeamForge and so on. also you can select a theme and customize it yourself.",
+  "category" : "Yeoman Generator",
+  "demo_link": "http://miconblog.github.io"
+}
+```
 
 # How to install
 
@@ -64,6 +64,4 @@ $ yoursite/> gulp deploy
 ## License
 
 MIT
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/miconblog/generator-codepolio/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 

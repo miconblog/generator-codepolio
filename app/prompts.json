@@ -17,11 +17,9 @@
     "message": "Choose your theme" ,
     "choices": [
       {
-        "name": "twitter",
+        "name": "twitter.github.io",
+        "value": "twitter",
         "checked": true
-      },
-      {
-        "name": "square"
       }
     ]
   }

@@ -3,7 +3,7 @@
 angular.module('codepolio')
   .controller('MainCtrl', function ($scope, $resource) {
 
-    $resource('/app/sweetcode.jam')
+    $resource('sweetcode.jam')
       .get()
       .$promise
       .then(function(codejam) {

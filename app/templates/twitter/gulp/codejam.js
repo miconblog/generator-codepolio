@@ -2,16 +2,25 @@
 
 var gulp = require('gulp');
 var fs = require('fs');
+var paths = gulp.paths;
 var chalk = require('chalk');
 var Q = require('q');
 
-gulp.task('sweetcode.jam', function(){
-
-  if( !fs.existsSync("src/app/sweetcode.jam") ){
+function checkSweetCode (){
+  if( !fs.existsSync("src/sweetcode.jam") ){
     console.error(chalk.red('please, run "gulp codejam" first!'));
     process.exit(1);
   }
+}
 
+gulp.task('sweetcode.jam', function(){
+  checkSweetCode()
+});
+
+gulp.task('sweetcodejam', function () {
+  checkSweetCode()
+  return gulp.src(paths.src + '/sweetcode.jam')
+    .pipe(gulp.dest(paths.dist));
 });
 
 gulp.task('codejam', function(){
@@ -43,7 +52,7 @@ gulp.task('codejam', function(){
       codejam.repos.push(repo);    
     });
 
-    fs.writeFile("src/app/sweetcode.jam",
+    fs.writeFile("src/sweetcode.jam",
       JSON.stringify(codejam, null, '\t'), function(){
         deferred.resolve();
       }
