@@ -27,13 +27,17 @@ $> npm install -g generator-codepolio
 
 install from source code for development
 ```bash
+$> git clone https://github.com/miconblog/generator-codepolio.git
 $> cd generator-codepolio
+$> npm install
 $> npm link
 ```
 
 finally, initiate the generator:
 ```bash
-$> yo codepolio
+$> mkdir yoursite
+$> cd yoursite
+$ yoursite> yo codepolio
 ```
 
 # How to build & run 
@@ -42,9 +46,14 @@ First of all, you have to make **sweet code jam**
 $ yoursite/> gulp codejam
 ```
 
-serve to local for development
+serve to local as development mode
 ```bash
 $ yoursite/> gulp serve
+```
+
+serve to local as production mode
+```bash
+$ yoursite/> gulp serve:dist
 ```
 
 build for deploy 
@@ -59,7 +68,6 @@ $ yoursite/> gulp deploy
 
 # References
 [How to debug yeoman generator](http://techblog.dorogin.com/2014/04/how-to-debug-yeoman-generator.html)
-
 
 ## License
 
