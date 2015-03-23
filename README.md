@@ -64,3 +64,6 @@ $ yoursite/> gulp deploy
 ## License
 
 MIT
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/miconblog/generator-codepolio/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
