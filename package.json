@@ -1,6 +1,6 @@
 {
   "name": "generator-codepolio",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Build portfolio website with your repositories",
   "license": "MIT",
   "main": "app/index.js",
