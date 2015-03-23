@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/miconblog/generator-codepolio",
   "dependencies": {
-    "chalk": "^0.5.1",
+    "chalk": "^1.0.0",
     "lodash": "^3.5.0",
     "moment": "^2.9.0",
     "q": "^1.2.0",
