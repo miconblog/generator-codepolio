@@ -47,7 +47,7 @@
   <li class="repo grid-1 {{repo.language.toLowerCase()}}" ng-repeat="repo in repos | orderBy:'rank'  | filter:searchText">
     <a href="{{repo.url}}">
       <h2><span class="{{repo.provider}}"></span>{{repo.title}}</h2>
-      <h3>{{repo.language}}, {{repo.category}}</h3>
+      <h3>{{repo.category}}{{repo.language}}</h3>
       <p>{{repo.description}}</p>
       <div class="info">
         <p class="star">Star {{repo.star_count}}</p>

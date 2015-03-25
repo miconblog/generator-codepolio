@@ -17,6 +17,10 @@ angular.module('codepolio')
             public_repos_count++;
           }
 
+          if( item.language ){
+            item.language = ", " + item.language
+          }
+
         });
 
         $scope.owner = codejam.repos[0].owner;
