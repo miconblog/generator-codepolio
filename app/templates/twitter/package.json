@@ -39,7 +39,8 @@
     "request": "^2.53.0",
     "require-dir": "~0.1.0",
     "uglify-save-license": "~0.4.1",
-    "wiredep": "~2.2.0"
+    "wiredep": "~2.2.0",
+    "github": "^0.2.3"
   },
   "engines": {
     "node": ">=0.10.0"

@@ -84,4 +84,4 @@ gulp.task('clean', function (done) {
   $.del([paths.dist + '/', paths.tmp + '/'], done);
 });
 
-gulp.task('build', ['html', 'images', 'fonts', 'misc', 'codejam']);
+gulp.task('build', ['html', 'images', 'fonts', 'misc']);

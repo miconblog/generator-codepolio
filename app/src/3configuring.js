@@ -35,8 +35,29 @@ module.exports = function (Generator) {
       this.destinationPath()
     );
 
+    // gulp tasks
+    this.fs.copy(
+      this.templatePath('../src/gulp/codejam.js'),
+      this.destinationPath('/gulp/codejam.js')
+    );
+    this.fs.copy(
+      this.templatePath('../src/gulp/deploy.js'),
+      this.destinationPath('/gulp/deploy.js')
+    );
+
     // saving configuartions
-    this.config.set(this.props);
+    if( this.props.github ){
+      var deploy = this.config.get("deploy");
+      deploy.username = this.props.github;
+      this.config.set("deploy", deploy);
+      this.config.set("github", this.props.github);
+    }
+
+    if( this.props.bitbucket ){
+      this.config.set("bitbucket", this.props.bitbucket);
+    }
+
+    //this.config.set(this.props);
     this.config.save();
   }
 }

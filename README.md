@@ -20,12 +20,12 @@ To make your **portfolio site** with your code repositories like github and bitb
 
 # How to install
 
-install from npm
+install from npm (stable)
 ```bash
 $> npm install -g generator-codepolio
 ```
 
-install from source code for development
+install from source code for development (unstable)
 ```bash
 $> git clone https://github.com/miconblog/generator-codepolio.git
 $> cd generator-codepolio
@@ -56,14 +56,31 @@ serve to local as production mode
 $ yoursite/> gulp serve:dist
 ```
 
-build for deploy 
+build for deploy yourself
 ```bash
 $ yoursite/> gulp build
 ```
 
-deploy github pages (plan for 0.2.0 ver.)
+# How to deploy to github pages
+First, open your **.yo-rc.json** file and modify deploy infomation. if you mind to expose your github password, you can use a [personal access token](https://github.com/settings/applications).
+
+```
+{
+  "generator-codepolio": {
+    "deploy": {
+      "username": "GITHUB_USERNAME",
+      "password": "GITHUB_PASSWORD",
+      "repository": "codepolio",
+      "token": "GITHUB_TOKEN"
+    },
+    ....
+  }
+}
+```
+
+Second, run **deploy** task:
 ```bash
-$ yoursite/> gulp deploy
+$ yoursite/> gulp deploy:github
 ```
 
 # References

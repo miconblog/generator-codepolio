@@ -45,6 +45,6 @@ gulp.task('serve', ['sweetcode.jam','watch'], function () {
   ]);
 });
 
-gulp.task('serve:dist', ['build'], function () {
+gulp.task('serve:dist', ['build', 'codejam'], function () {
   browserSyncInit(paths.dist);
 });
