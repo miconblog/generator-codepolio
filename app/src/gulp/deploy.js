@@ -81,9 +81,15 @@ gulp.task('github:create', function(){
   
   github.repos.create({name:config.deploy.repository}, function(err, response, body){
 
-    console.log(err, response, body)
+    if( err ) {
+      log("already created it");
+    }else{
+      log("created repository in github");
+    }
+    
+    // console.log(err, response, body)
   })
 
 });
 
-gulp.task('deploy', ['github:auth' ,'github:create']);
+gulp.task('github', ['github:auth' ,'github:create']);

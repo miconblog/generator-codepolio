@@ -76,7 +76,7 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('misc', function () {
-  return gulp.src(paths.src + '/**/*.ico')
+  return gulp.src([paths.src + '/**/*.ico', './README.md'])
     .pipe(gulp.dest(paths.dist + '/'));
 });
 

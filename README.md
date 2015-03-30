@@ -79,10 +79,17 @@ First, open your **.yo-rc.json** file and modify deploy infomation. if you mind 
 ```
 
 Second, run **deploy** script:
+**repository should be created in github**
 ```bash
-$ yoursite/> sh deploy.sh init (if you don't have an repository)
-$ youtsite/> sh deploy.sh push (if you already have the repository)
+$ yoursite/> sh deploy.sh init
 ```
+**after created then just push it**
+```bash
+$ youtsite/> sh deploy.sh push
+or 
+$ youtsite/> sh deploy.sh push 'with commit log'
+```
+
 
 # References
 [How to debug yeoman generator](http://techblog.dorogin.com/2014/04/how-to-debug-yeoman-generator.html)
