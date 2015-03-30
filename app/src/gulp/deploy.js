@@ -1,11 +1,13 @@
 'use strict';
 
 var gulp = require('gulp');
-var gutil = require('gulp-util');
 var config = require('../.yo-rc.json')["generator-codepolio"];
 var chalk = require('chalk');
+
 var GitHubApi = require("github");
 var github = new GitHubApi({version: "3.0.0"});
+
+var gutil = require('gulp-util');
 var magenta = gutil.colors.magenta;
 var cyan = gutil.colors.cyan;
 var red = gutil.colors.red;
@@ -34,8 +36,6 @@ function checkAuth(){
       log(chalk.red(err)); 
       process.exit(1); 
     }
-
-    log("auth Okay");
 
   });
 
@@ -86,15 +86,4 @@ gulp.task('github:create', function(){
 
 });
 
-gulp.task('github:commit', function(){
-  
-  
-  github.repos.create({name:config.deploy.repository}, function(err, response, body){
-
-    console.log(err, response, body)
-  })
-
-});
-
-
-gulp.task('deploy', ['github:auth' ,'github:create', 'github:commit']);
+gulp.task('deploy', ['github:auth' ,'github:create']);

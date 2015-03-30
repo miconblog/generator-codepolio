@@ -37,9 +37,10 @@ then
 	echo $COMMENT
 	cd $CWD
 	rm -rf dist
-	git remote add origin https://github.com/<%= username %>/<%= repository %>.git
+	git clone https://github.com/<%= username %>/<%= repository %>.git
 	mv codepolio dist
 	gulp codejam
+	gulp sweetcodejam
 	gulp build
 	cd dist
 	git add .

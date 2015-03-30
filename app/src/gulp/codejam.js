@@ -52,6 +52,7 @@ gulp.task('codejam', function(){
       codejam.repos.push(repo);    
     });
 
+    delete codejam['generator-codepolio'].deploy;
     fs.writeFile("src/sweetcode.jam",
       JSON.stringify(codejam, null, '\t'), function(){
         deferred.resolve();

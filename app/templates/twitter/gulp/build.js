@@ -76,7 +76,7 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('misc', function () {
-  return gulp.src([paths.src + '/**/*.ico', paths.src + '/sweetcode.jam'])
+  return gulp.src(paths.src + '/**/*.ico')
     .pipe(gulp.dest(paths.dist + '/'));
 });
 
