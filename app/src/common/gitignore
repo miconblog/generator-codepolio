@@ -6,6 +6,7 @@ node_modules
 # For codepolio
 .tmp
 src/
+dist/
 
 # For bower
 bower_components/

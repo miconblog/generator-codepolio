@@ -28,6 +28,15 @@ module.exports = function (Generator) {
       this.destinationPath('README.md'),
       { username: this.props.github }
     );
+    this.fs.copyTpl(
+      this.templatePath('../src/common/_deploy.sh'),
+      this.destinationPath('deploy.sh'),
+      { 
+        cwd: this.destinationPath(),
+        username: this.props.github,
+        repository: this.config.get("deploy").repository
+      }
+    );
 
     // theme copy
     this.fs.copy(
