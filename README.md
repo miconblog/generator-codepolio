@@ -78,9 +78,10 @@ First, open your **.yo-rc.json** file and modify deploy infomation. if you mind 
 }
 ```
 
-Second, run **deploy** task:
+Second, run **deploy** script:
 ```bash
-$ yoursite/> gulp deploy:github
+$ yoursite/> sh deploy.sh init (if you don't have an repository)
+$ youtsite/> sh deploy.sh push (if you already have the repository)
 ```
 
 # References
